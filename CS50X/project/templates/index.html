@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+{% block main %}
+<h1 class="">Overview</h1>
+{% for category in all_categories %}
+<div class="pt-5">
+<table>
+    <thead>
+        <tr class="" style="background-color: #CDCDCD;">
+            <th>Category</th>
+            <th>Budget for Category</th>
+            <th>Used Budget</th>
+            <th>Free Budget</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <td class="fw-bold">{{category["name"]}}</td>
+        <td>{{category["budget"]}}$</td>
+        <td>{{category["actual_costs"]}}$</td>
+        <td>{{category["free"]}}$</td>
+        <td style="background-color: {{category['color']}};">{{category["status"]}}</td>
+    </tbody>
+</table>
+</div>
+{% for item in category["items"] %}
+<div class="">
+    <table>
+        <thead>
+            <tr style="background-color: #E5E5E5;">
+                <th>Image</th>
+                <th>Itemname</th>
+                <th>Price</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <td><img src="{{ item['image'] }}" width="60px" height="60px" alt="-"></td>
+            <td>{{item["name"]}}</td>
+            <td>{{item["price"]}}$</td>
+            <td style="background-color: {{item['color']}};">{{item["status"]}}</td>
+        </tbody>
+    </table>
+    </div>
+{% endfor %}
+{% endfor %}
+<h2 class="text-decoration-underline pt-3">Conclusion</h2>
+<div class="pt-2">
+    <table>
+        <thead>
+            <tr style="background-color: ##A3C7E9;">
+                <th>Maximum Budget</th>
+                <th>Used Budget</th>
+                <th>Free Budget</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <td>{{ max }}$</td>
+            <td>{{ costs }}$</td>
+            <td>{{ left }}$</td>
+            <td style="background-color: {{color}};">{{ status}}</td>
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+

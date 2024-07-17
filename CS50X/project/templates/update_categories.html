@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Categories
+{% endblock %}
+
+{% block main %}
+<h1 class="pb-4">Edit Categories</h1>
+<form action="/edit_category" method="post">
+    <table class="pt-3">
+        <tbody>
+            <tr>
+                <td><input type="text" class="form-control w-auto" name="name" placeholder="{{output[0]['name']}}" value="{{output[0]['name']}}" autofocus required></td>
+                <td><input type="text" class="form-control w-auto" name="budget" placeholder="{{output[0]['budget']}}" value="{{output[0]['budget']}}" required></td>
+                <td><input type="text" class="form-control w-auto" name="id" value="{{output[0]['category_id']}}" hidden required></td>
+                <td><button type="submit">Change Category</button></td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+{% endblock %}
+

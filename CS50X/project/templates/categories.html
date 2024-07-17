@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Categories
+{% endblock %}
+
+{% block main %}
+<h1 class="pb-4">Categories</h1>
+<table>
+    <thead>
+        <tr style="background-color: #CDCDCD;">
+            <th>Name</th>
+            <th>Budget</th>
+            <th>Configure</th>
+            <th>Remove</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- TODO: Loop through the database entries to display them in this table -->
+         {% for data in output %}
+         <tr>
+            <td>{{data["name"]}}</td>
+            <td>{{data["budget"]}}$</td>
+            <td>
+                <form action="/edit_cat" method="post">
+                    <button name="id" value="{{data['category_id']}}" type="submit">Edit</button>
+                </form>
+            </td>
+            <td><form action="/delete_cat" method="post">
+                <button name="id" value="{{data['category_id']}}" type="submit">Delete</button>
+            </form></td>
+            <td style="background-color: {{data['color']}};">{{ data["status"] }}</td>
+            </tr>
+         </tr>
+         {% endfor %}
+    </tbody>
+</table>
+<div class="pt-5 pb-5">
+    <div class="border">
+<table class="pt-5">
+    <thead>
+        <tr>
+            <th>Maximum Budget</th>
+            <th>Currently Used</th>
+            <th>Budget Left</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ max_budget }}$</td>
+            <td>{{ current_budget }}$</td>
+            <td>{{ left }}$</td>
+        </tr>
+    </tbody>
+</table>
+    </div>
+</div>
+<div class="mt-1">
+<form action="/categories" method="post">
+    <table class="pt-5">
+        <tbody>
+            <tr>
+                <td><input type="text" class="form-control w-auto" name="name" placeholder="Name" autofocus required></td>
+                <td><input type="text" class="form-control w-auto" name="budget" placeholder="Budget" required></td>
+                <td><button type="submit">Add Category</button></td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+</div>
+{% endblock %}
+

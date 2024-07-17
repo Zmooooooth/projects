@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Items
+{% endblock %}
+
+{% block main %}
+<h1 class="pb-4">Items</h1>
+<table>
+    <thead>
+        <tr style="background-color: #CDCDCD;">
+            <th>Image</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- TODO: Loop through the database entries to display them in this table -->
+         {% for item in items %}
+         <tr>
+            <td><img src="{{ item['image'] }}" width="60px" height="60px" alt="-"></td>
+            <td>{{ item["name"] }}</td>
+            <td>{{ item["price" ]}}$</td>
+            <td>{{ item["category"]}}</td>
+            <td>
+                <form action="/delete_item" method="post">
+                <button name="id" value="{{item['item_id']}}" type="submit">Delete</button>
+                </form>
+            </td>
+            </tr>
+         </tr>
+         {% endfor %}
+    </tbody>
+</table>
+<h3 class="pt-2 pb-2 text-decoration-underline">Add Items</h3>
+<div class="mt-1">
+<form action="/items" method="post">
+    <table class="pt-5">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Image src</th>
+                <th>Category</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" class="form-control w-auto" name="name" placeholder="Name" autofocus required></td>
+                <td><input type="text" class="form-control w-auto" name="price" placeholder="Price" required></td>
+                <td><input type="text" class="form-control w-auto" name="image" placeholder="Image path"></td>
+                <td><select name="category" required>
+                    <option disabled selected value="">---</option>
+                    {% for item in output %}
+                        <option value="{{ item['name'] }}">{{item['name']}}</option>
+                    {% endfor %}
+                </select>
+                </td>
+                <td><button type="submit">Add Item</button></td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+</div>
+{% endblock %}
+

@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block main %}
+<h1 class="pb-4">Register Now</h1>
+<form action="/register" method="post">
+    <div class="pb-3">
+    <input type="text" class="form-control mx-auto w-auto" name="username" placeholder="Username" autofocus required></div>
+    <div class="pb-3">
+    <input type="password" class="form-control mx-auto w-auto" name="password" placeholder="Password" required></div>
+    <div class="pb-3">
+    <input type="password" class="form-control mx-auto w-auto" name="confirmation" placeholder="Confirmation" required></div>
+    <div class="pb-3">
+    <input type="text" class="form-control mx-auto w-auto" name="budget" placeholder="Budget" required></div>
+    <div class="pb-3">
+    <button type="submit">Register</button></div>
+</form>
+{% endblock %}
+

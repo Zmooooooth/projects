@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Budget
+{% endblock %}
+{% block main %}
+<h1 class="pb-5">Change Budget</h1>
+<form action="/budget" method="post">
+    <table class="pt-5">
+        <thead>
+            <tr>
+                <th>Budget</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" class="form-control " name="budget" value="{{budget}}" placeholder="Budget" autofocus required></td>
+                <td><button type="submit">Change Budget</button></td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+{% endblock %}
