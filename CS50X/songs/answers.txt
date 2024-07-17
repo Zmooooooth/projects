@@ -1,0 +1,2 @@
+The top songs are probably all over the place in terms of atmosphere danceability and valence, as a result it really does not make much sense to get the average and draw conclusions from the overall aura.
+It makes more sense to groupt moods and build an average of these and than look at the overall allocation of happy / sad ... songs.

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                let buttons = document.querySelectorAll('.button');
+                buttons.forEach(function(button)
+                {
+                    if (button.classList.contains("red"))
+                    {
+                        button.addEventListener('click', function (){
+                            this.style.backgroundColor = 'red';
+                            document.querySelector('#p1').innerHTML = "Incorrect";
+                            document.querySelector('#p1').style.color = 'red';
+                        });
+                    }
+                    else if(button.classList.contains("green"))
+                    {
+                        button.addEventListener('click', function (){
+                            this.style.backgroundColor = 'green';
+                            document.querySelector('#p1').innerHTML = "Correct!";
+                            document.querySelector('#p1').style.color = 'green';
+                        });
+                    }
+                })
+                document.querySelector('#submit').addEventListener('click',function(){
+                    let inputElement = document.getElementById('answer');
+                    if (inputElement.value == "Chicken Nuggets")
+                    {
+                        document.querySelector('#p2').innerHTML = "Correct!";
+                        document.querySelector('#p2').style.color = 'green';
+                    }
+                    else
+                    {
+                        document.querySelector('#p2').innerHTML = "Incorrect";
+                        document.querySelector('#p2').style.color = 'red';
+                    }
+                })
+        });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>How much is a dozen ?</h3>
+                <p id="p1"></p>
+                <button type="button" class="button red">10 Items</button>
+                <button type="button" class="button green">12 Items</button>
+                <button type="button" class="button red">6 Items</button>
+                <button type="button" class="button red">14 Items</button>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>What is the best food in the world ?</h3>
+                <p id="p2"></p>
+                    <input autocomplete="off" autofocus id="answer" type="text">
+                    <button type="submit" id="submit">Submit</button>
+            </div>
+        </div>
+    </body>
+</html>
