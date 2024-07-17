@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+History
+{% endblock %}
+
+{% block main %}
+<h1 class="pb-3 text-decoration-underline">Transactions</h1>
+<div class="section text-middle">
+    <table>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price per Share</th>
+                <th>Volume</th>
+                <th>Date</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+             {% for item in output %}
+             <tr>
+                <td>{{item["symbol"]}}</td>
+                <td>{{item["shares"]}}</td>
+                <td>{{item["price_per_share"]}}</td>
+                <td>{{item["total_costs"]}}</td>
+                <td>{{item["date"]}}</td>
+                <td>{{item["type"]}}</td>
+             </tr>
+             {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

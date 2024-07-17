@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Deposit Cash
+{% endblock %}
+
+{% block main %}
+<h1 class="pb-3">Deposit Cash</h1>
+<form action="/deposit" method="post">
+    <input type="text" name="amount" autofocus required autofill="off" placeholder="AMOUNT">
+    <button type="submit">Deposit</button>
+</form>
+{% endblock %}

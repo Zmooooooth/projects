@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block main %}
+<h1 class="pb-3 text-decoration-underline">Your Portfolio</h1>
+<div class="section text-middle">
+
+    <h2 class="pb-3">All Stocks</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price per Share</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+             {% for item in output %}
+             <tr>
+                <td>{{item["symbol"]}}</td>
+                <td>{{item["shares"]}}</td>
+                <td>{{item["price_per_share"]}}</td>
+                <td>{{item["value"]}}</td>
+             </tr>
+             {% endfor %}
+        </tbody>
+    </table>
+    <table>
+        <thead>
+            <tr>
+                <th>Cash</th>
+                <th>Equity</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+             <tr>
+                <td>{{ cashpos }}</td>
+                <td>{{ equity }}</td>
+                <td>{{ total }}</td>
+             </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

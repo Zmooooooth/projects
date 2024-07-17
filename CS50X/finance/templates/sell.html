@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Sell Stocks
+{% endblock %}
+
+{% block main %}
+<h1 class="pb-3">Sell Stocks</h1>
+<form action="/sell" method="post">
+    <select name="symbol" required>
+        <option disabled selected value="">Stock</option>
+        {% for item in stocks%}
+            <option value='{{item["symbol"]}}'>{{ item["symbol"] }}</option>
+        {% endfor %}
+    </select>
+    <input type="text" name="shares" autofocus autofill="off" required placeholder="AMOUNT">
+    <button type="submit">Sell</button>
+</form>
+{% endblock %}
