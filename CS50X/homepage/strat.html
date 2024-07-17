@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>Algorithmic Trading</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top px-4">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="images/icon.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
+                </a>
+              <a class="navbar-brand" href="#">Navigation</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link " href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Strategies</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="algo.html">Coding Algorithms</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="ytb.html">Learn From Great Examples</a>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </nav>
+          <div class="container text-center pt-5">
+            <h1 class="text-decoration-underline">
+              What are Algorithmical Trading Strategies?
+            </h1>
+            <div class="container pt-5">
+              <img class=" border border-4 border-light-subtle"  class="img-fluid" src="images/algoimage.png" width="600px" height="338px">
+            </div>
+            <div class="container text-center pt-5 fs-5">
+            <p>
+                Algorithmic trading strategies leverage computer programs to execute trades based on predefined criteria.
+            </p>
+            <p>
+                 Common strategies include "trend following", which exploits market momentum by analyzing moving averages or price patterns; "arbitrage", which seeks to profit from price discrepancies across different markets or instruments; "mean reversion", based on the idea that prices will revert to their historical averages; "statistical arbitrage", which involves complex mathematical models to identify price inefficiencies; and "market making", where algorithms provide liquidity by simultaneously offering to buy and sell an asset.
+                </p>
+                 <p>
+                 These strategies can be customized and combined to optimize performance and manage risk in various market conditions.
+            </p>
+            <p id="spacer">
+              In the following we are going to cover Range Breakout Strategies.
+            </p>
+        </div>
+        <h3 class="pt-2 pb-2 bg-light">The Range Breakout Strategy</h3>
+        <div class="text-center fs-5">
+          <p class="pt-4">
+            The range breakout strategy is a popular method in algorithmic trading that aims to capitalize on market volatility by identifying and trading on significant price movements outside a defined range. This range is typically established using historical price data, where the highest and lowest prices within a specific timeframe (e.g., daily, weekly) create upper and lower boundaries.
+          </p>
+          <p class="text-decoration-underline" id="shortdescrib">Here is a breakdown of the strategy</p>
+          <ol id="strategie">
+            <li class ="strat">Range Identification: The algorithm begins by analyzing historical price data to determine the high and low points over a set period. These points form the resistance (upper) and support (lower) levels of the range.</li>
+            <li class ="strat">Breakout Detection: The strategy involves monitoring real-time price movements to detect when the price breaks out of this established range. A breakout occurs when the price moves beyond the resistance or support levels, indicating a potential trend direction.</li>
+            <li class ="strat">Entry Signals: Upon detecting a breakout, the algorithm generates entry signals. If the price breaks above the resistance level, it indicates a bullish breakout, prompting a buy signal. Conversely, a drop below the support level suggests a bearish breakout, triggering a sell signal.</li>
+            <li class ="strat">Confirmation and Filters: To reduce the likelihood of false breakouts, additional criteria such as volume confirmation or time filters may be incorporated. For example, the algorithm might require a certain volume threshold or sustained price movement beyond the range for a specified period before executing a trade.</li>
+            <li class ="strat">Risk Management: Effective risk management is crucial in a range breakout strategy. This involves setting stop-loss orders just inside the range boundaries to minimize potential losses if the breakout fails and the price reverses.</li>
+            <li class ="strat">Exit Strategy: The algorithm also defines clear exit points, either by targeting a specific profit level or using trailing stops to lock in gains as the price moves favorably.</li>
+          </ol>
+          <p class="pt-4">By automating the identification and execution process, the range breakout strategy allows traders to capitalize on significant market movements with speed and precision, minimizing human error and emotional biases. However, its success depends on accurate range identification, effective filters to avoid false signals, and robust risk management practices.</p>
+        </div>
+        <div class="container pt-5 text-center">
+          <a href="algo.html">
+            <button type="button" class="btn btn-primary btn-lg">
+              Read more
+            </button>
+          </a>
+        </div>
+        </div>
+        </div>
+        <div class="container my-5">
+            <footer class="bg-dark text-center text-white">
+            </div>
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+              © 2024 Copyright
+              <p class="text-dark" href="#">Justus Parthier</p>
+          </footer>
+
+    </div>
+</div>
+    </body>
+</html>
