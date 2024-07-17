@@ -1,0 +1,4 @@
+tabulate
+csv
+yfinance
+pyfiglet
